@@ -52,6 +52,7 @@
   "column_break_wyrv6",
   "invoice_date",
   "goods_and_description_section",
+  "courier_gate_pass_ct",
   "section_break_hn5yq",
   "total_qty",
   "column_break_pklqi",
@@ -387,11 +388,17 @@
    "fieldname": "letter",
    "fieldtype": "Text Editor",
    "label": "Letter"
+  },
+  {
+   "fieldname": "courier_gate_pass_ct",
+   "fieldtype": "Table",
+   "label": "Courier Gate Pass CT",
+   "options": "Courier Gate Pass CT"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-25 00:24:26.487639",
+ "modified": "2024-05-25 00:29:07.058007",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
