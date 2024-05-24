@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-05-25 00:03:47.366154",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "dimensions",
+  "weight",
+  "l",
+  "w",
+  "h"
+ ],
+ "fields": [
+  {
+   "fieldname": "dimensions",
+   "fieldtype": "Data",
+   "label": "Dimensions",
+   "options": "Package Dimensions"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "l",
+   "fieldtype": "Float",
+   "label": "L"
+  },
+  {
+   "fieldname": "w",
+   "fieldtype": "Float",
+   "label": "W"
+  },
+  {
+   "fieldname": "h",
+   "fieldtype": "Float",
+   "label": "H"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-05-25 00:03:47.366154",
+ "modified_by": "Administrator",
+ "module": "Gate Pass",
+ "name": "Dimensions",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
