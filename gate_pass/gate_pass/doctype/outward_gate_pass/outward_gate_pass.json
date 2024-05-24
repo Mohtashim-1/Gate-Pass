@@ -26,7 +26,7 @@
   "by_hand_name",
   "unit",
   "section_break_773ua",
-  "deliver_to",
+  "out_to",
   "column_break_023y6",
   "customer",
   "supplier",
@@ -65,17 +65,22 @@
    "default": "0",
    "fieldname": "non_inventory",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Non Inventory"
   },
   {
    "fieldname": "ogp_type",
    "fieldtype": "Select",
-   "label": "OGP Type"
+   "in_list_view": 1,
+   "label": "OGP Type",
+   "options": "\nInventory\nNon-Inventory",
+   "reqd": 1
   },
   {
    "default": "0",
    "fieldname": "inventory",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Inventory"
   },
   {
@@ -83,9 +88,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Now",
    "fieldname": "creation_date",
    "fieldtype": "Date",
-   "label": "Creation Date"
+   "label": "Creation Date",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rl0fu",
@@ -94,14 +101,17 @@
   {
    "fieldname": "type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Type",
-   "options": "\nNon-Returnable\nReturnable"
+   "options": "\nNon-Returnable\nReturnable",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_fxnwa",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.type == \"Returnable\"",
    "fieldname": "returnable_date",
    "fieldtype": "Date",
    "label": "Returnable Date"
@@ -109,7 +119,8 @@
   {
    "fieldname": "approved_date",
    "fieldtype": "Date",
-   "label": "Approved Date"
+   "label": "Approved Date",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_rbika",
@@ -118,6 +129,7 @@
   {
    "fieldname": "courier_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Courier Name",
    "options": "Supplier"
   },
@@ -128,6 +140,7 @@
   {
    "fieldname": "courier_by",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Courier By",
    "options": "Courier By"
   },
@@ -138,11 +151,13 @@
   {
    "fieldname": "by_hand_name",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "By Hand Name"
   },
   {
    "fieldname": "unit",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Unit",
    "options": "Branch"
   },
@@ -151,28 +166,25 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "deliver_to",
-   "fieldtype": "Select",
-   "label": "Deliver To",
-   "options": "Customer\nSupplier\nLocal"
-  },
-  {
    "fieldname": "column_break_023y6",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Customer\"",
    "fieldname": "customer",
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Supplier\"",
    "fieldname": "supplier",
    "fieldtype": "Link",
    "label": "Supplier",
    "options": "Supplier"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Local\"",
    "fieldname": "local",
    "fieldtype": "Data",
    "label": "Local"
@@ -190,6 +202,7 @@
   {
    "fieldname": "airway_bill_no",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Airway Bill No"
   },
   {
@@ -197,23 +210,27 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.ogp_type == \"Inventory\" && doc.type == \"Non-Returnable\"\n",
    "fieldname": "issue_warehouse",
    "fieldtype": "Link",
    "label": "Issue Warehouse",
    "options": "Warehouse"
   },
   {
+   "depends_on": "eval:doc.ogp_type ==\"Inventory\"",
    "fieldname": "inventory_items_section",
    "fieldtype": "Section Break",
    "label": "Inventory Items"
   },
   {
+   "depends_on": "eval:doc.ogp_type ==\"Inventory\"",
    "fieldname": "inventory_gate_pass",
    "fieldtype": "Table",
    "label": "Inventory Gate Pass",
    "options": "Inventory Gate Pass"
   },
   {
+   "depends_on": "eval:doc.ogp_type ==\"Non-Inventory\"",
    "fieldname": "non_inventory_items_section",
    "fieldtype": "Section Break",
    "label": "Non Inventory Items"
@@ -232,7 +249,8 @@
    "fieldname": "document_from",
    "fieldtype": "Select",
    "label": "Document From",
-   "options": "Outward Gate Pass\nCourier Gate Pass"
+   "options": "Outward Gate Pass\nCourier Gate Pass",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_r3adk",
@@ -242,7 +260,8 @@
    "fieldname": "courier_gate_pass",
    "fieldtype": "Link",
    "label": "Courier Gate Pass",
-   "options": "Courier Gate Pass"
+   "options": "Courier Gate Pass",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_pxlca",
@@ -265,6 +284,7 @@
   {
    "fieldname": "owner1",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Owner",
    "options": "User"
   },
@@ -272,7 +292,8 @@
    "fieldname": "prepared_by",
    "fieldtype": "Link",
    "label": "Prepared By",
-   "options": "User"
+   "options": "User",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rtl7t",
@@ -282,27 +303,32 @@
    "fieldname": "approved_user",
    "fieldtype": "Link",
    "label": "Modified By",
-   "options": "User"
+   "options": "User",
+   "read_only": 1
   },
   {
    "fieldname": "approved_by",
    "fieldtype": "Data",
-   "label": "Approved By"
+   "label": "Approved By",
+   "read_only": 1
   },
   {
    "fieldname": "returned_by",
    "fieldtype": "Link",
    "label": "Returned By",
-   "options": "User"
+   "options": "User",
+   "read_only": 1
   },
   {
    "fieldname": "received_by",
    "fieldtype": "Data",
-   "label": "Received By"
+   "label": "Received By",
+   "read_only": 1
   },
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Naming Series",
    "options": "OGP-.MM.-.YY.-"
   },
@@ -325,12 +351,18 @@
    "fieldtype": "Link",
    "label": "Stock Entry",
    "options": "Stock Entry"
+  },
+  {
+   "fieldname": "out_to",
+   "fieldtype": "Select",
+   "label": "Deliver To",
+   "options": "Customer\nSupplier\nLocal"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-25 01:04:58.340608",
+ "modified": "2024-05-25 01:44:34.486131",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
