@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-05-25 00:39:04.985395",
  "default_view": "List",
  "doctype": "DocType",
@@ -30,7 +31,34 @@
   "customer",
   "supplier",
   "local",
-  "column_break_o90o3"
+  "column_break_o90o3",
+  "by_hand",
+  "airway_bill_no",
+  "column_break_kc6na",
+  "issue_warehouse",
+  "inventory_items_section",
+  "inventory_gate_pass",
+  "non_inventory_items_section",
+  "non_inventory_ogp",
+  "section_break_mgsof",
+  "document_from",
+  "column_break_r3adk",
+  "courier_gate_pass",
+  "section_break_pxlca",
+  "additional_instruction_tab",
+  "additional_instruction",
+  "section_break_xf1h1",
+  "owner1",
+  "prepared_by",
+  "column_break_rtl7t",
+  "approved_user",
+  "approved_by",
+  "column_break_hpjyd",
+  "returned_by",
+  "received_by",
+  "naming_series",
+  "amended_from",
+  "stock_entry"
  ],
  "fields": [
   {
@@ -152,15 +180,161 @@
   {
    "fieldname": "column_break_o90o3",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "by_hand",
+   "fieldtype": "Link",
+   "label": "By Hand",
+   "options": "Hand By Name"
+  },
+  {
+   "fieldname": "airway_bill_no",
+   "fieldtype": "Data",
+   "label": "Airway Bill No"
+  },
+  {
+   "fieldname": "column_break_kc6na",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issue_warehouse",
+   "fieldtype": "Link",
+   "label": "Issue Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "inventory_items_section",
+   "fieldtype": "Section Break",
+   "label": "Inventory Items"
+  },
+  {
+   "fieldname": "inventory_gate_pass",
+   "fieldtype": "Table",
+   "label": "Inventory Gate Pass",
+   "options": "Inventory Gate Pass"
+  },
+  {
+   "fieldname": "non_inventory_items_section",
+   "fieldtype": "Section Break",
+   "label": "Non Inventory Items"
+  },
+  {
+   "fieldname": "non_inventory_ogp",
+   "fieldtype": "Table",
+   "label": "Non Inventory OGP",
+   "options": "Non Inventory OGP"
+  },
+  {
+   "fieldname": "section_break_mgsof",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "document_from",
+   "fieldtype": "Select",
+   "label": "Document From",
+   "options": "Outward Gate Pass\nCourier Gate Pass"
+  },
+  {
+   "fieldname": "column_break_r3adk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "courier_gate_pass",
+   "fieldtype": "Link",
+   "label": "Courier Gate Pass",
+   "options": "Courier Gate Pass"
+  },
+  {
+   "fieldname": "section_break_pxlca",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_instruction_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Instruction"
+  },
+  {
+   "fieldname": "additional_instruction",
+   "fieldtype": "Text Editor",
+   "label": "Additional Instruction"
+  },
+  {
+   "fieldname": "section_break_xf1h1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "owner1",
+   "fieldtype": "Link",
+   "label": "Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "prepared_by",
+   "fieldtype": "Link",
+   "label": "Prepared By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_rtl7t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "approved_user",
+   "fieldtype": "Link",
+   "label": "Modified By",
+   "options": "User"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Data",
+   "label": "Approved By"
+  },
+  {
+   "fieldname": "returned_by",
+   "fieldtype": "Link",
+   "label": "Returned By",
+   "options": "User"
+  },
+  {
+   "fieldname": "received_by",
+   "fieldtype": "Data",
+   "label": "Received By"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "OGP-.MM.-.YY.-"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Outward Gate Pass",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_hpjyd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "label": "Stock Entry",
+   "options": "Stock Entry"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-25 00:45:27.691403",
+ "modified": "2024-05-25 01:04:58.340608",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
