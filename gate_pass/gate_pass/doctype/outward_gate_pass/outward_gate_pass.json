@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-25 00:39:04.985395",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ogp_type",
+  "inventory",
+  "non_inventory",
+  "column_break_fpv1b",
+  "creation_date",
+  "column_break_rl0fu",
+  "type",
+  "column_break_fxnwa",
+  "returnable_date",
+  "approved_date",
+  "section_break_rbika",
+  "courier_name",
+  "column_break_3pwr9",
+  "courier_by",
+  "column_break_zxdol",
+  "by_hand_name",
+  "unit",
+  "section_break_773ua",
+  "deliver_to",
+  "column_break_023y6",
+  "customer",
+  "supplier",
+  "local",
+  "column_break_o90o3"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "non_inventory",
+   "fieldtype": "Check",
+   "label": "Non Inventory"
+  },
+  {
+   "fieldname": "ogp_type",
+   "fieldtype": "Select",
+   "label": "OGP Type"
+  },
+  {
+   "default": "0",
+   "fieldname": "inventory",
+   "fieldtype": "Check",
+   "label": "Inventory"
+  },
+  {
+   "fieldname": "column_break_fpv1b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Creation Date"
+  },
+  {
+   "fieldname": "column_break_rl0fu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nNon-Returnable\nReturnable"
+  },
+  {
+   "fieldname": "column_break_fxnwa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "returnable_date",
+   "fieldtype": "Date",
+   "label": "Returnable Date"
+  },
+  {
+   "fieldname": "approved_date",
+   "fieldtype": "Date",
+   "label": "Approved Date"
+  },
+  {
+   "fieldname": "section_break_rbika",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "courier_name",
+   "fieldtype": "Link",
+   "label": "Courier Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "column_break_3pwr9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "courier_by",
+   "fieldtype": "Link",
+   "label": "Courier By",
+   "options": "Courier By"
+  },
+  {
+   "fieldname": "column_break_zxdol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "by_hand_name",
+   "fieldtype": "Data",
+   "label": "By Hand Name"
+  },
+  {
+   "fieldname": "unit",
+   "fieldtype": "Link",
+   "label": "Unit",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "section_break_773ua",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "deliver_to",
+   "fieldtype": "Select",
+   "label": "Deliver To",
+   "options": "Customer\nSupplier\nLocal"
+  },
+  {
+   "fieldname": "column_break_023y6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "local",
+   "fieldtype": "Data",
+   "label": "Local"
+  },
+  {
+   "fieldname": "column_break_o90o3",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-05-25 00:45:27.691403",
+ "modified_by": "Administrator",
+ "module": "Gate Pass",
+ "name": "Outward Gate Pass",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

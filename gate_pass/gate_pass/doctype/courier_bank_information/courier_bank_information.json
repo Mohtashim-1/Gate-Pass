@@ -16,6 +16,9 @@
   {
    "fieldname": "sales_order",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Sales Order",
    "options": "Sales Order",
    "unique": 1
@@ -23,18 +26,24 @@
   {
    "fieldname": "reference_no",
    "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Reference No"
   },
   {
    "fieldname": "reference_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Reference Date"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-25 00:23:24.908957",
+ "modified": "2024-05-25 00:33:10.695154",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Bank Information",
