@@ -28,7 +28,7 @@
   "section_break_773ua",
   "out_to",
   "column_break_023y6",
-  "customer",
+  "customer_name",
   "supplier",
   "local",
   "column_break_o90o3",
@@ -168,13 +168,6 @@
   {
    "fieldname": "column_break_023y6",
    "fieldtype": "Column Break"
-  },
-  {
-   "depends_on": "eval:doc.out_to == \"Customer\"",
-   "fieldname": "customer",
-   "fieldtype": "Link",
-   "label": "Customer",
-   "options": "Customer"
   },
   {
    "depends_on": "eval:doc.out_to == \"Supplier\"",
@@ -357,15 +350,34 @@
    "fieldtype": "Select",
    "label": "Deliver To",
    "options": "Customer\nSupplier\nLocal"
+  },
+  {
+   "depends_on": "eval:doc.out_to == \"Customer\"",
+   "fieldname": "customer_name",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2024-05-25 01:44:34.486131",
+ "links": [
+  {
+   "group": "Customer",
+   "link_doctype": "Customer",
+   "link_fieldname": "customer_name"
+  },
+  {
+   "group": "Supplier",
+   "link_doctype": "Supplier",
+   "link_fieldname": "supplier_name"
+  }
+ ],
+ "modified": "2024-05-26 16:17:29.036140",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
+ "name_case": "Title Case",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -382,9 +394,12 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
+ "title_field": "naming_series",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
