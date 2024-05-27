@@ -10,7 +10,8 @@
  "field_order": [
   "invoice_from",
   "contact_person",
-  "address"
+  "address",
+  "ntn"
  ],
  "fields": [
   {
@@ -28,11 +29,16 @@
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "ntn",
+   "fieldtype": "Data",
+   "label": "NTN"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-25 00:07:53.096833",
+ "modified": "2024-05-27 15:47:53.263512",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Invoice From",

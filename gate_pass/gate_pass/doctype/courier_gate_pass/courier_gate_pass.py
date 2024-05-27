@@ -1,8 +1,10 @@
 # Copyright (c) 2024, Mohtashim and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 class CourierGatePass(Document):
-	pass
+	def before_save(self):
+		self.invoice_no = self.name
+

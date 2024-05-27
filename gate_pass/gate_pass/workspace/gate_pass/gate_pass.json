@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Gate Pass",
  "links": [],
- "modified": "2024-05-27 15:35:48.055444",
+ "modified": "2024-05-27 15:37:01.320539",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Gate Pass",
@@ -23,6 +23,19 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 39.0,
- "shortcuts": [],
+ "shortcuts": [
+  {
+   "doc_view": "List",
+   "label": "Outward Gate Pass",
+   "link_to": "Outward Gate Pass",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "List",
+   "label": "Courier Gate Pass",
+   "link_to": "Courier Gate Pass",
+   "type": "DocType"
+  }
+ ],
  "title": "Gate Pass"
 }

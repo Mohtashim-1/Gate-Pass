@@ -83,9 +83,11 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "Today",
    "fieldname": "creation_date",
    "fieldtype": "Date",
-   "label": "Creation Date"
+   "label": "Creation Date",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xge8g",
@@ -102,23 +104,27 @@
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Customer\"",
    "fieldname": "customer",
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Supplier\"",
    "fieldname": "supplier",
    "fieldtype": "Link",
    "label": "Supplier",
    "options": "Supplier"
   },
   {
+   "depends_on": "eval:doc.out_to == \"Local\"",
    "fieldname": "local",
    "fieldtype": "Data",
    "label": "Local"
   },
   {
+   "depends_on": "eval:doc.out_to != \"Local\"",
    "fieldname": "contact_link",
    "fieldtype": "Link",
    "label": "Contact Link",
@@ -135,6 +141,7 @@
    "label": "Mobile No"
   },
   {
+   "depends_on": "eval:doc.out_to != \"Local\"",
    "fieldname": "link_address",
    "fieldtype": "Link",
    "label": "Address",
@@ -150,12 +157,14 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "S.A.H ENTERPRISE INC.",
    "fieldname": "invoice_from",
    "fieldtype": "Link",
    "label": "Invoice From",
    "options": "Invoice From"
   },
   {
+   "fetch_from": "invoice_from.ntn",
    "fieldname": "ntn_no",
    "fieldtype": "Data",
    "label": "NTN No"
@@ -267,7 +276,8 @@
   {
    "fieldname": "dimension_total_weight",
    "fieldtype": "Float",
-   "label": "Dimension Total Weight"
+   "label": "Dimension Total Weight",
+   "read_only": 1
   },
   {
    "fieldname": "invoice_details",
@@ -305,7 +315,8 @@
   {
    "fieldname": "total_qty",
    "fieldtype": "Float",
-   "label": "Total Qty"
+   "label": "Total Qty",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_pklqi",
@@ -314,7 +325,8 @@
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "sample_details_tab",
@@ -335,7 +347,8 @@
    "fieldname": "prepared_by",
    "fieldtype": "Link",
    "label": "Prepared By",
-   "options": "User"
+   "options": "User",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ihvlg",
@@ -350,7 +363,8 @@
   {
    "fieldname": "approved_by",
    "fieldtype": "Data",
-   "label": "Approved By"
+   "label": "Approved By",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_vd2yr",
@@ -398,7 +412,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-25 00:29:07.058007",
+ "modified": "2024-05-27 15:59:38.255686",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
@@ -420,5 +434,8 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
 }
