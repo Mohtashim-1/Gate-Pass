@@ -12,7 +12,7 @@
   "section_break_bpe9t",
   "creation_date",
   "column_break_xge8g",
-  "deliver_to",
+  "out_to",
   "section_break_97ief",
   "customer",
   "supplier",
@@ -59,6 +59,7 @@
   "total_amount",
   "sample_details_tab",
   "section_break_v4zsd",
+  "sample_detail",
   "owner1",
   "prepared_by",
   "column_break_ihvlg",
@@ -94,12 +95,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "deliver_to",
-   "fieldtype": "Select",
-   "label": "Deliver To",
-   "options": "Customer\nSupplier\nLocal"
-  },
-  {
    "fieldname": "section_break_97ief",
    "fieldtype": "Section Break"
   },
@@ -124,18 +119,19 @@
    "label": "Local"
   },
   {
-   "depends_on": "eval:doc.out_to != \"Local\"",
    "fieldname": "contact_link",
    "fieldtype": "Link",
    "label": "Contact Link",
    "options": "Contact"
   },
   {
+   "fetch_from": "contact_link.first_name",
    "fieldname": "contact_person_name",
    "fieldtype": "Data",
    "label": "Contact Person Name"
   },
   {
+   "fetch_from": "contact_link.mobile_no",
    "fieldname": "mobile_no",
    "fieldtype": "Data",
    "label": "Mobile No"
@@ -148,8 +144,9 @@
    "options": "Address"
   },
   {
+   "fetch_from": "customer.primary_address",
    "fieldname": "address",
-   "fieldtype": "Small Text",
+   "fieldtype": "Text",
    "label": "Address"
   },
   {
@@ -170,18 +167,21 @@
    "label": "NTN No"
   },
   {
+   "fetch_from": "contact_mobile.first_name",
    "fieldname": "contact_person",
    "fieldtype": "Link",
    "label": "Contact Person",
    "options": "Contact"
   },
   {
+   "fetch_from": "contact_person.mobile_no",
    "fieldname": "contact_mobile",
    "fieldtype": "Link",
    "label": "Mobile No",
    "options": "Contact"
   },
   {
+   "fetch_from": "invoice_from.address",
    "fieldname": "from_address",
    "fieldtype": "Small Text",
    "label": "From Address"
@@ -214,7 +214,7 @@
   },
   {
    "fieldname": "trip_type",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "label": "Trip Type",
    "options": "\nLocal\nExport"
   },
@@ -340,12 +340,15 @@
   {
    "fieldname": "owner1",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Owner",
    "options": "User"
   },
   {
+   "fetch_from": "owner.full_name",
    "fieldname": "prepared_by",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Prepared By",
    "options": "User",
    "read_only": 1
@@ -361,6 +364,7 @@
    "options": "User"
   },
   {
+   "fetch_from": "modified_by1.full_name",
    "fieldname": "approved_by",
    "fieldtype": "Data",
    "label": "Approved By",
@@ -408,11 +412,22 @@
    "fieldtype": "Table",
    "label": "Courier Gate Pass CT",
    "options": "Courier Gate Pass CT"
+  },
+  {
+   "fieldname": "out_to",
+   "fieldtype": "Select",
+   "label": "Deliver To",
+   "options": "Customer\nSupplier\nLocal"
+  },
+  {
+   "fieldname": "sample_detail",
+   "fieldtype": "Text Editor",
+   "label": "Sample Detail"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-27 15:59:38.255686",
+ "modified": "2024-05-28 02:47:12.557017",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
