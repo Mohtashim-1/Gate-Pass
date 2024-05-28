@@ -45,21 +45,23 @@
   "physical_net_weight",
   "column_break_2j0wi",
   "dimensions",
-  "dimension_total_weight",
-  "invoice_details",
+  "total_weight",
+  "invoice_details_tab",
   "invoice_details_section",
-  "invoice_no",
   "column_break_wyrv6",
+  "invoice_no",
   "invoice_date",
   "goods_and_description_section",
   "courier_gate_pass_ct",
   "section_break_hn5yq",
   "total_qty",
   "column_break_pklqi",
+  "party_account_currency",
   "total_amount",
   "sample_details_tab",
   "section_break_v4zsd",
   "sample_detail",
+  "section_break_zaats",
   "owner1",
   "prepared_by",
   "column_break_ihvlg",
@@ -274,24 +276,13 @@
    "options": "Dimensions"
   },
   {
-   "fieldname": "dimension_total_weight",
-   "fieldtype": "Float",
-   "label": "Dimension Total Weight",
-   "read_only": 1
-  },
-  {
-   "fieldname": "invoice_details",
-   "fieldtype": "Data",
-   "label": "Invoice Details"
-  },
-  {
    "fieldname": "invoice_details_section",
    "fieldtype": "Section Break",
    "label": "Invoice Details"
   },
   {
    "fieldname": "invoice_no",
-   "fieldtype": "Read Only",
+   "fieldtype": "Data",
    "label": "Invoice No"
   },
   {
@@ -305,8 +296,8 @@
   },
   {
    "fieldname": "goods_and_description_section",
-   "fieldtype": "Section Break",
-   "label": "Goods and Description"
+   "fieldtype": "Tab Break",
+   "label": "Goods Description"
   },
   {
    "fieldname": "section_break_hn5yq",
@@ -326,7 +317,7 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount",
-   "read_only": 1
+   "precision": "2"
   },
   {
    "fieldname": "sample_details_tab",
@@ -360,6 +351,7 @@
   {
    "fieldname": "modified_by1",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Modified By",
    "options": "User"
   },
@@ -377,12 +369,14 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Naming Series",
    "options": ".####./.MM./.YYYY"
   },
   {
    "fieldname": "currency",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Currency",
    "options": "Currency"
   },
@@ -423,11 +417,32 @@
    "fieldname": "sample_detail",
    "fieldtype": "Text Editor",
    "label": "Sample Detail"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Dimension Total Weight"
+  },
+  {
+   "fieldname": "invoice_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Invoice Details"
+  },
+  {
+   "fetch_from": "customer.default_currency",
+   "fieldname": "party_account_currency",
+   "fieldtype": "Link",
+   "label": "Party Account Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_zaats",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-28 15:03:25.694740",
+ "modified": "2024-05-28 22:51:22.039404",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
