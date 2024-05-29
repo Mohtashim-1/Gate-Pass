@@ -1,25 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:dimension",
+ "autoname": "field:item_code",
  "creation": "2024-05-24 23:16:12.238876",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "dimension",
+  "item_code",
   "l",
   "w",
   "h"
  ],
  "fields": [
-  {
-   "fieldname": "dimension",
-   "fieldtype": "Data",
-   "label": "Dimension",
-   "unique": 1
-  },
   {
    "fieldname": "l",
    "fieldtype": "Float",
@@ -34,11 +28,17 @@
    "fieldname": "h",
    "fieldtype": "Float",
    "label": "H"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Dimension",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-24 23:16:12.238876",
+ "modified": "2024-05-29 18:52:20.791515",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Package Dimensions",

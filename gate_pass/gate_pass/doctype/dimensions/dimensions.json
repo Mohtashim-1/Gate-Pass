@@ -6,7 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "dimensions",
+  "item_code",
   "weight",
   "l",
   "w",
@@ -14,54 +14,46 @@
  ],
  "fields": [
   {
-   "fieldname": "dimensions",
+   "fieldname": "item_code",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Dimensions",
+   "label": "item_code",
    "options": "Package Dimensions"
   },
   {
    "fieldname": "weight",
    "fieldtype": "Float",
+   "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Weight"
   },
   {
-   "fetch_from": "dimensions.l",
+   "fetch_from": "item_code.l",
    "fieldname": "l",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "L"
   },
   {
-   "fetch_from": "dimensions.w",
+   "fetch_from": "item_code.w",
    "fieldname": "w",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "W"
   },
   {
-   "fetch_from": "dimensions.h",
+   "fetch_from": "item_code.h",
    "fieldname": "h",
    "fieldtype": "Float",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "H"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-28 21:39:39.570350",
+ "modified": "2024-05-29 23:50:28.862163",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Dimensions",
