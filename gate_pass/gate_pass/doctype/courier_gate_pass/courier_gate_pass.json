@@ -41,8 +41,8 @@
   "packaging_details_tab",
   "section_break_otwod",
   "no_of_packages",
-  "physical_gross_weight",
-  "physical_net_weight",
+  "gross_wt",
+  "net_wt",
   "column_break_2j0wi",
   "dimensions",
   "total_weight",
@@ -256,16 +256,6 @@
    "label": "No of Packages"
   },
   {
-   "fieldname": "physical_gross_weight",
-   "fieldtype": "Data",
-   "label": "Physical Gross Weight"
-  },
-  {
-   "fieldname": "physical_net_weight",
-   "fieldtype": "Data",
-   "label": "Physical Net Weight"
-  },
-  {
    "fieldname": "column_break_2j0wi",
    "fieldtype": "Column Break"
   },
@@ -438,11 +428,21 @@
   {
    "fieldname": "section_break_zaats",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gross_wt",
+   "fieldtype": "Data",
+   "label": "Physical Gross Weight"
+  },
+  {
+   "fieldname": "net_wt",
+   "fieldtype": "Data",
+   "label": "Physical Net Weight"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-29 23:43:47.931787",
+ "modified": "2024-05-30 01:32:10.633106",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",

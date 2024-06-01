@@ -11,6 +11,7 @@
   "ogp_type",
   "inventory",
   "non_inventory",
+  "stock_entry_voucher",
   "column_break_fpv1b",
   "creation_date",
   "column_break_rl0fu",
@@ -37,7 +38,7 @@
   "column_break_kc6na",
   "issue_warehouse",
   "inventory_items_section",
-  "inventory_gate_pass",
+  "item",
   "non_inventory_items_section",
   "non_inventory_ogp",
   "section_break_mgsof",
@@ -216,13 +217,6 @@
    "label": "Inventory Items"
   },
   {
-   "depends_on": "eval:doc.ogp_type ==\"Inventory\"",
-   "fieldname": "inventory_gate_pass",
-   "fieldtype": "Table",
-   "label": "Inventory Gate Pass",
-   "options": "Inventory Gate Pass"
-  },
-  {
    "depends_on": "eval:doc.ogp_type ==\"Non-Inventory\"",
    "fieldname": "non_inventory_items_section",
    "fieldtype": "Section Break",
@@ -357,6 +351,18 @@
    "fieldtype": "Link",
    "label": "Customer",
    "options": "Customer"
+  },
+  {
+   "fieldname": "stock_entry_voucher",
+   "fieldtype": "Data",
+   "label": "Stock Entry Voucher"
+  },
+  {
+   "depends_on": "eval:doc.ogp_type ==\"Inventory\"",
+   "fieldname": "item",
+   "fieldtype": "Table",
+   "label": "Inventory Gate Pass",
+   "options": "Inventory Gate Pass"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -373,11 +379,10 @@
    "link_fieldname": "supplier_name"
   }
  ],
- "modified": "2024-05-26 16:17:29.036140",
+ "modified": "2024-05-30 20:20:34.960227",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
- "name_case": "Title Case",
  "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
@@ -395,11 +400,9 @@
   }
  ],
  "quick_entry": 1,
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "naming_series",
  "track_changes": 1,
  "track_seen": 1,
  "track_views": 1
