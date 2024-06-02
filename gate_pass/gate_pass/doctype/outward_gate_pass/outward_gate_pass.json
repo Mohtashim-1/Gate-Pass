@@ -10,7 +10,7 @@
  "field_order": [
   "ogp_type",
   "inventory",
-  "non_inventory",
+  "is_non_inventory",
   "stock_entry_voucher",
   "column_break_fpv1b",
   "creation_date",
@@ -29,7 +29,7 @@
   "section_break_773ua",
   "out_to",
   "column_break_023y6",
-  "customer_name",
+  "customer",
   "supplier",
   "local",
   "column_break_o90o3",
@@ -38,9 +38,9 @@
   "column_break_kc6na",
   "issue_warehouse",
   "inventory_items_section",
-  "item",
+  "inventory_gate_pass",
   "non_inventory_items_section",
-  "non_inventory_ogp",
+  "non_inventory",
   "section_break_mgsof",
   "document_from",
   "column_break_r3adk",
@@ -63,11 +63,10 @@
  ],
  "fields": [
   {
-   "default": "0",
    "fieldname": "non_inventory",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Non Inventory"
+   "fieldtype": "Table",
+   "label": "Non Inventory OGP",
+   "options": "Non Inventory OGP"
   },
   {
    "fieldname": "ogp_type",
@@ -223,12 +222,6 @@
    "label": "Non Inventory Items"
   },
   {
-   "fieldname": "non_inventory_ogp",
-   "fieldtype": "Table",
-   "label": "Non Inventory OGP",
-   "options": "Non Inventory OGP"
-  },
-  {
    "fieldname": "section_break_mgsof",
    "fieldtype": "Section Break"
   },
@@ -346,20 +339,27 @@
    "options": "Customer\nSupplier\nLocal"
   },
   {
-   "depends_on": "eval:doc.out_to == \"Customer\"",
-   "fieldname": "customer_name",
-   "fieldtype": "Link",
-   "label": "Customer",
-   "options": "Customer"
-  },
-  {
    "fieldname": "stock_entry_voucher",
    "fieldtype": "Data",
    "label": "Stock Entry Voucher"
   },
   {
+   "default": "0",
+   "fieldname": "is_non_inventory",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Non Inventory"
+  },
+  {
+   "depends_on": "eval:doc.out_to == \"Customer\"",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
    "depends_on": "eval:doc.ogp_type ==\"Inventory\"",
-   "fieldname": "item",
+   "fieldname": "inventory_gate_pass",
    "fieldtype": "Table",
    "label": "Inventory Gate Pass",
    "options": "Inventory Gate Pass"
@@ -379,7 +379,7 @@
    "link_fieldname": "supplier_name"
   }
  ],
- "modified": "2024-05-30 20:20:34.960227",
+ "modified": "2024-06-02 18:04:49.904571",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
