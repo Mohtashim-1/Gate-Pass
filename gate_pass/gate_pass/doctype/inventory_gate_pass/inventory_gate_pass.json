@@ -15,16 +15,22 @@
   "person",
   "remarks",
   "uom",
-  "amended_from"
+  "amended_from",
+  "s_warehouse",
+  "t_warehouse"
  ],
  "fields": [
   {
    "fieldname": "item",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Item",
-   "options": "Item"
+   "options": "Item",
+   "reqd": 1
   },
   {
    "fieldname": "item_description",
@@ -52,9 +58,13 @@
   {
    "fieldname": "qty",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "Qty"
+   "label": "Qty",
+   "reqd": 1
   },
   {
    "fieldname": "person",
@@ -83,13 +93,37 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "s_warehouse",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "t_warehouse",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Target Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-30 01:14:25.204056",
+ "modified": "2024-06-03 10:33:49.956300",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Inventory Gate Pass",
