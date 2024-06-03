@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_import": 1,
- "autoname": "autoincrement",
+ "autoname": "format:{address_line1}",
  "creation": "2013-01-10 16:34:32",
  "doctype": "DocType",
  "document_type": "Setup",
@@ -157,12 +157,12 @@
  "icon": "fa fa-map-marker",
  "idx": 5,
  "links": [],
- "modified": "2024-06-03 23:23:40.569793",
+ "modified": "2024-06-03 23:36:56.879957",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Address",
  "name_case": "Title Case",
- "naming_rule": "Autoincrement",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
