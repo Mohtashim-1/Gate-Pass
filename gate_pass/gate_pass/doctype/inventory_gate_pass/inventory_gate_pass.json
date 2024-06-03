@@ -16,7 +16,8 @@
   "remarks",
   "uom",
   "amended_from",
-  "s_warehouse"
+  "s_warehouse",
+  "t_warehouse"
  ],
  "fields": [
   {
@@ -95,13 +96,24 @@
    "in_standard_filter": 1,
    "label": "Source Warehouse",
    "options": "Warehouse"
+  },
+  {
+   "fieldname": "t_warehouse",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Target Warehouse",
+   "options": "Warehouse"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-03 11:01:08.559217",
+ "modified": "2024-06-03 11:03:04.097602",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Inventory Gate Pass",
