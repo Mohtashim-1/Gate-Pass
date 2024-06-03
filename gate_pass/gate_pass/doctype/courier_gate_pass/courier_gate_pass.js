@@ -11,15 +11,15 @@
 //         };
 //     });
 // });
-frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
-    frm.set_query("contact_person", function () {
-        return {
-            "filters": {
-                "courier_contact": 1
-            }
-        };
-    });
-});
+// frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
+//     frm.set_query("contact_person", function () {
+//         return {
+//             "filters": {
+//                 "courier_contact": 1
+//             }
+//         };
+//     });
+// });
 frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
     frm.set_value("currency", "USD");
 });

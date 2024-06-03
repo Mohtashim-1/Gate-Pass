@@ -25,8 +25,8 @@
   "column_break_zwu10",
   "invoice_from",
   "ntn_no",
-  "contact_person",
-  "contact_mobile",
+  "contact",
+  "mobile",
   "from_address",
   "shipping_details_tab",
   "shipping_details_section",
@@ -37,7 +37,7 @@
   "airway_bill_no",
   "column_break_fteyt",
   "type_of_samples",
-  "by_hand",
+  "mode_of_transport",
   "packaging_details_tab",
   "section_break_otwod",
   "no_of_packages",
@@ -146,7 +146,7 @@
    "options": "Address"
   },
   {
-   "fetch_from": "customer.primary_address",
+   "fetch_from": "link_address.full_address",
    "fieldname": "address",
    "fieldtype": "Text",
    "label": "Address"
@@ -167,20 +167,6 @@
    "fieldname": "ntn_no",
    "fieldtype": "Data",
    "label": "NTN No"
-  },
-  {
-   "fetch_from": "contact_mobile.first_name",
-   "fieldname": "contact_person",
-   "fieldtype": "Link",
-   "label": "Contact Person",
-   "options": "Contact"
-  },
-  {
-   "fetch_from": "contact_person.mobile_no",
-   "fieldname": "contact_mobile",
-   "fieldtype": "Link",
-   "label": "Mobile No",
-   "options": "Contact"
   },
   {
    "fetch_from": "invoice_from.address",
@@ -234,12 +220,6 @@
    "fieldtype": "Link",
    "label": "Type of Samples",
    "options": "Type of Samples"
-  },
-  {
-   "fieldname": "by_hand",
-   "fieldtype": "Link",
-   "label": "By Hand",
-   "options": "Hand By Name"
   },
   {
    "fieldname": "packaging_details_tab",
@@ -438,11 +418,29 @@
    "fieldname": "net_wt",
    "fieldtype": "Data",
    "label": "Physical Net Weight"
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Link",
+   "label": "By Hand",
+   "options": "Hand By Name"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "customer.mobile_no",
+   "fieldname": "mobile",
+   "fieldtype": "Read Only",
+   "label": "Mobile"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-30 01:32:10.633106",
+ "modified": "2024-06-03 15:50:36.172300",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
