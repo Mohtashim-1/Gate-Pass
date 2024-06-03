@@ -20,9 +20,10 @@
  "fields": [
   {
    "fieldname": "item",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Item",
-   "options": "Item"
+   "reqd": 1
   },
   {
    "fieldname": "item_description",
@@ -49,7 +50,9 @@
   {
    "fieldname": "qty",
    "fieldtype": "Data",
-   "label": "Qty"
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
   },
   {
    "fieldname": "person",
@@ -64,14 +67,16 @@
   {
    "fieldname": "uom",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "UOM",
-   "options": "UOM"
+   "options": "UOM",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-25 00:59:34.633172",
+ "modified": "2024-06-03 13:53:33.660036",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Non Inventory OGP",

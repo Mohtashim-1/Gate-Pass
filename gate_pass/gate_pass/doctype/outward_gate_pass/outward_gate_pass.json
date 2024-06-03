@@ -329,6 +329,7 @@
   {
    "fieldname": "stock_entry",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Stock Entry",
    "options": "Stock Entry"
   },
@@ -341,6 +342,7 @@
   {
    "fieldname": "stock_entry_voucher",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Stock Entry Voucher"
   },
   {
@@ -379,7 +381,7 @@
    "link_fieldname": "supplier_name"
   }
  ],
- "modified": "2024-06-02 18:04:49.904571",
+ "modified": "2024-06-03 13:52:27.142661",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
@@ -399,7 +401,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

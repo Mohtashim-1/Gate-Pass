@@ -32,6 +32,7 @@
    "label": "Reference No"
   },
   {
+   "fetch_from": "sales_order.transaction_date",
    "fieldname": "reference_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -43,7 +44,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-25 00:33:10.695154",
+ "modified": "2024-06-03 14:07:36.985209",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Bank Information",

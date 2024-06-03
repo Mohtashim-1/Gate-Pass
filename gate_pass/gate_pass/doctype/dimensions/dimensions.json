@@ -19,7 +19,7 @@
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
-   "label": "item_code",
+   "label": "Dimension",
    "options": "Package Dimensions"
   },
   {
@@ -53,7 +53,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-29 23:50:28.862163",
+ "modified": "2024-06-03 13:57:36.244204",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Dimensions",
