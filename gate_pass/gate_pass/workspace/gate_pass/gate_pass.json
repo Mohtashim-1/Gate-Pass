@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Gate Pass\"}}]",
+ "content": "[{\"id\":\"5_a6sd_EWU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gate Pass</span>\",\"col\":12}},{\"id\":\"kQz5JEX6yA\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Outward Gate Pass\",\"col\":4}},{\"id\":\"T1KVtc4lq6\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Courier Gate Pass\",\"col\":4}}]",
  "creation": "2024-05-27 15:34:45.224508",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,30 +12,26 @@
  "is_hidden": 0,
  "label": "Gate Pass",
  "links": [],
- "modified": "2024-05-27 15:37:01.320539",
+ "modified": "2024-06-02 19:50:55.371298",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Gate Pass",
- "number_cards": [],
+ "number_cards": [
+  {
+   "label": "Outward Gate Pass",
+   "number_card_name": "Outward Gate Pass"
+  },
+  {
+   "label": "Courier Gate Pass",
+   "number_card_name": "Courier Gate Pass"
+  }
+ ],
  "owner": "Administrator",
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
  "roles": [],
  "sequence_id": 39.0,
- "shortcuts": [
-  {
-   "doc_view": "List",
-   "label": "Outward Gate Pass",
-   "link_to": "Outward Gate Pass",
-   "type": "DocType"
-  },
-  {
-   "doc_view": "List",
-   "label": "Courier Gate Pass",
-   "link_to": "Courier Gate Pass",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Gate Pass"
 }
