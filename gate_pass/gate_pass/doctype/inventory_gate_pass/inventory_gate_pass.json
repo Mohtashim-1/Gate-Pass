@@ -103,12 +103,9 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Source Warehouse",
-<<<<<<< HEAD
    "options": "Warehouse",
    "reqd": 1
-=======
-   "options": "Warehouse"
->>>>>>> a3c7914223026656ab43f577d3c5c6753a345aeb
+
   },
   {
    "fieldname": "t_warehouse",
@@ -119,23 +116,16 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Target Warehouse",
-<<<<<<< HEAD
    "options": "Warehouse",
    "reqd": 1
-=======
-   "options": "Warehouse"
->>>>>>> a3c7914223026656ab43f577d3c5c6753a345aeb
+
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "istable": 1,
  "links": [],
-<<<<<<< HEAD
  "modified": "2024-06-03 10:33:49.956300",
-=======
- "modified": "2024-06-03 11:03:04.097602",
->>>>>>> a3c7914223026656ab43f577d3c5c6753a345aeb
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Inventory Gate Pass",
