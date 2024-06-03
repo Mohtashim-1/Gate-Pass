@@ -432,15 +432,15 @@
    "options": "Contact"
   },
   {
-   "fetch_from": "customer.mobile_no",
+   "fetch_from": "contact_link.mobile_no",
    "fieldname": "mobile",
-   "fieldtype": "Read Only",
+   "fieldtype": "Data",
    "label": "Mobile"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-03 15:50:36.172300",
+ "modified": "2024-06-03 18:18:16.443490",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
