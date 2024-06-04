@@ -73,7 +73,8 @@
   "bank_information_tab",
   "courier_bank_information",
   "letter_tab",
-  "letter"
+  "letter",
+  "amended_from"
  ],
  "fields": [
   {
@@ -436,11 +437,22 @@
    "fieldname": "mobile",
    "fieldtype": "Data",
    "label": "Mobile"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Courier Gate Pass",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-06-03 18:18:16.443490",
+ "modified": "2024-06-04 11:10:41.953346",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
