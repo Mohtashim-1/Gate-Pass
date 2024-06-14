@@ -238,9 +238,8 @@
   },
   {
    "fieldname": "courier_gate_pass",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Courier Gate Pass",
-   "options": "Courier Gate Pass",
    "read_only": 1
   },
   {
@@ -381,7 +380,7 @@
    "link_fieldname": "supplier_name"
   }
  ],
- "modified": "2024-06-03 13:52:27.142661",
+ "modified": "2024-06-14 15:53:59.438677",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
