@@ -280,3 +280,34 @@ frappe.ui.form.on("Courier Gate Pass", "refresh", function (frm) {
 });
 
 
+frappe.ui.form.on('Courier Gate Pass', {
+    no_of_packages: function (frm) {
+        // frm.set_df_property('dimension', 'cannot_add_rows', true);
+        let no_of_packages = frm.doc.no_of_packages;
+        // console.log(no_of_packages)
+        let item_code = " ";
+
+        if (!no_of_packages || no_of_packages <= 0) {
+            frappe.msgprint(__('Please enter a valid number of rows.'));
+            return;
+        }
+
+        frm.clear_table("dimensions");
+
+        for (let i = 0; i < no_of_packages; i++) {
+            let new_row = frm.add_child("dimensions");
+            frappe.model.set_value(new_row.doctype, new_row.name, 'item_code', item_code);
+        }
+        frm.refresh_field("dimensions");
+        // this.frm.get_field("dimensions").grid.cannot_add_rows = true;
+    }
+});
+
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh: function (frm) {
+        frm.set_df_property('dimensions', 'cannot_add_rows', true); // Hide add row button
+        // frm.set_df_property('dimensions', 'cannot_delete_rows', true); // Hide delete button
+        // frm.set_df_property('dimensions', 'cannot_delete_all_rows', true); // Hide delete all button
+    }
+});
