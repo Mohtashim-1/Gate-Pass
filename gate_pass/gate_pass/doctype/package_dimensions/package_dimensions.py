@@ -12,4 +12,4 @@ class PackageDimensions(Document):
 		self.dimension = str(self.l) +" X "+ str(self.w) +" X "+ str(self.h)
 		frappe.errprint(self.dimension)
 		frappe.msgprint("👌")
-		self.dimension = str(self.l) +" X "+ str(self.w) +" X "+ str(self.h)
+		# self.dimension = str(self.l) +" X "+ str(self.w) +" X "+ str(self.h)
