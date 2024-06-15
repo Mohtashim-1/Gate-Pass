@@ -3,12 +3,14 @@ from frappe.model.document import Document
 
 class CourierGatePass(Document):
     def before_save(self):
-        self.send_data_to_outward_gate_pass()
-        self.set_invoice()
+        if self.docstatus == 0:
+            self.send_data_to_outward_gate_pass()
+            self.set_invoice()
         
     def set_invoice(self):
         self.invoice_no = self.name
 
+        
     def send_data_to_outward_gate_pass(self):
         outward_gate_pass_items = []
 
