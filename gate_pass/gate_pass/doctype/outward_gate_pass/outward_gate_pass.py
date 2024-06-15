@@ -38,8 +38,10 @@ class OutwardGatePass(Document):
     def send_outward_gate_to_stock_entry(self):
         gate_pass = self
 
-        if gate_pass.ogp_type == "Inventory" and gate_pass.type == "Returnable" and gate_pass.workflow_state == "Approved":
+        # if gate_pass.ogp_type == "Inventory" and gate_pass.type == "Returnable" and gate_pass.workflow_state == "For Approval":
+        if gate_pass.ogp_type == "Inventory" and gate_pass.type == "Returnable" and gate_pass.workflow_state == "Direct Approved" or gate_pass.workflow_state == "For Approval" :
             stock_entry_items = []
+            frappe.errprint(gate_pass.workflow_state)
             for item in gate_pass.inventory_gate_pass:
                 stock_entry_items.append({
                     'item_code': item.item,
