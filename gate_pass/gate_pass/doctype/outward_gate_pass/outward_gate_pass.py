@@ -58,7 +58,7 @@ class OutwardGatePass(Document):
             
             stock_entry.insert(ignore_permissions=True)
             stock_entry.save()
-            stock_entry.submit()
+            # stock_entry.submit()
             
             frappe.msgprint(f"Stock Entry has been created: {stock_entry.name}")
         
@@ -69,7 +69,7 @@ class OutwardGatePass(Document):
                     'item_code': item.item,
                     'qty': item.qty,
                     's_warehouse': item.s_warehouse,
-                    # 't_warehouse': item.t_warehouse
+                    't_warehouse': item.t_warehouse
                 })
                 
             stock_entry = frappe.get_doc({
@@ -82,6 +82,6 @@ class OutwardGatePass(Document):
             
             stock_entry.insert(ignore_permissions=True)
             stock_entry.save()
-            stock_entry.submit()
+            # stock_entry.submit()
             
             frappe.msgprint(f"Stock Entry has been created: {stock_entry.name}")
