@@ -51,14 +51,14 @@ class OutwardGatePass(Document):
             stock_entry = frappe.get_doc({
                 'doctype': 'Stock Entry',
                 'purpose': 'Material Transfer',
-                'posting_date': gate_pass.posting_date,
+                'posting_date': gate_pass.creation_date,
                 'stock_entry_type': 'Material Transfer',
                 'items': stock_entry_items
             })
             
             stock_entry.insert(ignore_permissions=True)
             stock_entry.save()
-            # stock_entry.submit()
+            stock_entry.submit()
             
             frappe.msgprint(f"Stock Entry has been created: {stock_entry.name}")
         
@@ -75,13 +75,13 @@ class OutwardGatePass(Document):
             stock_entry = frappe.get_doc({
                 'doctype': 'Stock Entry',
                 'purpose': 'Material Issue',
-                'posting_date': gate_pass.posting_date,
+                'posting_date': gate_pass.creation_date,
                 'stock_entry_type': 'Material Issue',
                 'items': stock_entry_items
             })
             
             stock_entry.insert(ignore_permissions=True)
             stock_entry.save()
-            # stock_entry.submit()
+            stock_entry.submit()
             
             frappe.msgprint(f"Stock Entry has been created: {stock_entry.name}")
