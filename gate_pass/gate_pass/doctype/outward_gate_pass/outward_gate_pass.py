@@ -38,7 +38,7 @@ class OutwardGatePass(Document):
     def send_outward_gate_to_stock_entry(self):
         gate_pass = self
 
-        if gate_pass.ogp_type == "Inventory" and gate_pass.type == "Returnable" and workflow.state == "Pending Return":
+        if gate_pass.ogp_type == "Inventory" and gate_pass.type == "Returnable" and gate_pass.workflow.state == "Pending Return":
             stock_entry_items = []
             for item in gate_pass.inventory_gate_pass:
                 stock_entry_items.append({
@@ -62,7 +62,7 @@ class OutwardGatePass(Document):
             
             frappe.msgprint(f"Stock Entry has been created: {stock_entry.name}")
         
-        elif gate_pass.ogp_type == "Inventory" and gate_pass.type == "Non-Returnable" and workflow.state == "Pending Return":
+        elif gate_pass.ogp_type == "Inventory" and gate_pass.type == "Non-Returnable" and gate_pass.workflow.state == "Pending Return":
             stock_entry_items = []
             for item in gate_pass.inventory_gate_pass:
                 stock_entry_items.append({
