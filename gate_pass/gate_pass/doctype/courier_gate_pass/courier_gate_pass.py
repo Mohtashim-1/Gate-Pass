@@ -8,6 +8,7 @@ class CourierGatePass(Document):
     
     def validate(self):
         self.send_data_to_outward_gate_pass()
+        self.update_sum_in_parent()
         
     def set_invoice(self):
         self.invoice_no = self.name
@@ -44,3 +45,23 @@ class CourierGatePass(Document):
             
             frappe.msgprint(f"Outward Gate Pass has been created: {outward_gate_pass.name}")
             outward_gate_pass.submit()
+
+    def update_sum_in_parent(self):
+        # Initialize sum variable
+        frappe.errprint('test1')
+        total_qty = 0
+
+        # Iterate over child table items
+        for item in self.dimensions:
+            frappe.errprint('test')
+            total_qty += item.weight  # Assuming 'qty' is the field to sum up
+
+        # Update the parent document with the sum
+        # Assuming there's a field in the parent document named 'total_qty'
+        self.total_weight = total_qty
+
+        # Optionally, print the sum or save the document if needed
+        print(f"Total Quantity: {total_qty}")
+        self.save()  # Uncomment if you want to save the updated document
+
+            
