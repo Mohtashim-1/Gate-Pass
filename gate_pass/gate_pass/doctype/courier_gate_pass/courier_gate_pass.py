@@ -29,6 +29,11 @@ class CourierGatePass(Document):
                 'ogp_type': 'Non-Inventory',
                 'creation_date':self.creation_date,
                 'type': 'Non-Returnable',
+                'out_to':self.out_to,
+                'customer':self.customer,
+                'supplier':self.supplier,
+                'local':self.local,
+                'by_hand':self.mode_of_transport,
                 'document_from': 'Courier Gate Pass',
                 'courier_gate_pass': self.name,
                 'non_inventory': outward_gate_pass_items
