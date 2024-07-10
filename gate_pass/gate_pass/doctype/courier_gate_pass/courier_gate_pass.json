@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "naming_series:",
  "creation": "2024-05-25 00:23:28.257427",
@@ -368,6 +369,7 @@
    "label": "Letter"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "letter",
    "fieldtype": "Text Editor",
    "label": "Letter"
@@ -433,7 +435,7 @@
    "options": "Contact"
   },
   {
-   "fetch_from": "contact_link.mobile_no",
+   "fetch_from": "contact.mobile_no",
    "fieldname": "mobile",
    "fieldtype": "Data",
    "label": "Mobile"
@@ -452,7 +454,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-06-04 11:10:41.953346",
+ "modified": "2024-07-10 21:54:06.762391",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
