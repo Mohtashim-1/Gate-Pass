@@ -62,7 +62,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Price",
-   "options": "Currency"
+   "options": "currency"
   },
   {
    "fieldname": "column_break_ca1ik",
@@ -71,19 +71,18 @@
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_filter": 1,
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Amount",
-   "options": "Currency"
+   "options": "currency",
+   "precision": "2"
   },
   {
    "default": "USD",
    "fieldname": "currency",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
    "label": "Currency",
    "options": "Currency"
   }
@@ -91,7 +90,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-05-28 22:02:25.581870",
+ "modified": "2024-07-11 10:29:46.505342",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass CT",

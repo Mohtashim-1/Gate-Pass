@@ -57,7 +57,7 @@
   "section_break_hn5yq",
   "total_qty",
   "column_break_pklqi",
-  "party_account_currency",
+  "currency",
   "total_amount",
   "sample_details_tab",
   "section_break_v4zsd",
@@ -70,7 +70,6 @@
   "approved_by",
   "column_break_vd2yr",
   "naming_series",
-  "currency",
   "bank_information_tab",
   "courier_bank_information",
   "letter_tab",
@@ -209,6 +208,7 @@
    "options": "\nLocal\nExport"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "airway_bill_no",
    "fieldtype": "Data",
    "label": "Airway Bill No"
@@ -289,7 +289,9 @@
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "label": "Total Amount",
-   "precision": "2"
+   "options": "currency",
+   "precision": "0",
+   "read_only": 1
   },
   {
    "fieldname": "sample_details_tab",
@@ -346,6 +348,7 @@
    "options": ".####./.MM./.YYYY"
   },
   {
+   "default": "USD",
    "fieldname": "currency",
    "fieldtype": "Link",
    "hidden": 1,
@@ -402,13 +405,6 @@
    "label": "Invoice Details"
   },
   {
-   "fetch_from": "customer.default_currency",
-   "fieldname": "party_account_currency",
-   "fieldtype": "Link",
-   "label": "Party Account Currency",
-   "options": "Currency"
-  },
-  {
    "fieldname": "section_break_zaats",
    "fieldtype": "Section Break"
   },
@@ -454,7 +450,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-10 21:54:06.762391",
+ "modified": "2024-07-11 10:33:36.686428",
  "modified_by": "Administrator",
  "module": "Gate Pass",
  "name": "Courier Gate Pass",
