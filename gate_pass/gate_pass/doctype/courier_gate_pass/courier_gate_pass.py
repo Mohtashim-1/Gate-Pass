@@ -8,7 +8,6 @@ class CourierGatePass(Document):
     
     def validate(self):
         self.send_data_to_outward_gate_pass()
-       
         
     def set_invoice(self):
         self.invoice_no = self.name
@@ -44,7 +43,7 @@ class CourierGatePass(Document):
             outward_gate_pass.save()
             
             frappe.msgprint(f"Outward Gate Pass has been created: {outward_gate_pass.name}")
-            outward_gate_pass.submit()
+            # outward_gate_pass.submit()
 
   
 
