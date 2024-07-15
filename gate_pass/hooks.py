@@ -160,9 +160,10 @@ app_license = "MIT"
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
-# override_doctype_dashboards = {
-# 	"Task": "gate_pass.task.get_dashboard_data"
-# }
+override_doctype_dashboards = {
+	# "Task": "gate_pass.task.get_dashboard_data"
+    "Customer": "gate_pass.gate_pass.doctype.customer.customer_dashboard.get_dashboard_for_employee"
+}
 
 # exempt linked doctypes from being automatically cancelled
 #
