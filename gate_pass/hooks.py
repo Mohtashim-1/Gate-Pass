@@ -162,7 +162,8 @@ app_license = "MIT"
 # along with any modifications made in other Frappe apps
 override_doctype_dashboards = {
 	# "Task": "gate_pass.task.get_dashboard_data"
-    "Customer": "gate_pass.gate_pass.doctype.customer.customer_dashboard.get_dashboard_for_employee"
+    "Customer": "gate_pass.gate_pass.doctype.customer.customer_dashboard.get_dashboard_for_employee",
+    "Supplier": "gate_pass.gate_pass.doctype.supplier.supplier_dashboard.get_dashboard_for_employee"
 }
 
 # exempt linked doctypes from being automatically cancelled
