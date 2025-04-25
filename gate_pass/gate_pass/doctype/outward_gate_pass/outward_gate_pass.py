@@ -13,6 +13,18 @@ class OutwardGatePass(Document):
                 courier_doc = frappe.get_doc('Courier Gate Pass', self.courier_gate_pass)
                 if courier_doc.docstatus == 1:
                     courier_doc.cancel()
+                    
+    # delete courier gate pass when outward delete  
+    
+    def on_delete(self):
+        if self.document_from == "Courier Gate Pass" and self.courier_gate_pass:
+            if frappe.db.exists('Courier Gate Pass', self.courier_gate_pass):
+                courier_doc = frappe.get_doc('Courier Gate Pass', self.courier_gate_pass)
+                # If not already cancelled, cancel first
+                if courier_doc.docstatus == 1:
+                    courier_doc.cancel()
+                # Now delete it
+                courier_doc.delete()
     
     
         
