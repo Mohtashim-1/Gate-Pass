@@ -360,3 +360,68 @@ frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
         };
     });
 });
+
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        frm.set_query('contact_link', () => {
+            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
+                return {
+                    filters: {
+                        custom_supplier: frm.doc.supplier
+                    }
+                };
+            } else {
+                return {};
+            }
+        });
+    }
+});
+
+// get supplier contact 
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        frm.set_query('contact_link', () => {
+            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
+                return {
+                    filters: {
+                        custom_supplier: frm.doc.supplier
+                    }
+                };
+            } else {
+                return {};
+            }
+        });
+    }
+});
+
+// get supplier address
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        if (frm.doc.out_to === "Supplier" && frm.doc.supplier) {
+            frappe.call({
+                method: "frappe.client.get_list",
+                args: {
+                    doctype: "Address",
+                    fields: ["name"],
+                    filters: [
+                        ["Dynamic Link", "link_name", "=", frm.doc.supplier]
+                    ],
+                    limit_page_length: 1000
+                },
+                callback: function(r) {
+                    let address_list = (r.message || []).map(d => d.name);
+                    frm.set_query('link_address', () => {
+                        return {
+                            filters: {
+                                name: ["in", address_list]
+                            }
+                        };
+                    });
+                }
+            });
+        }
+    }
+});
