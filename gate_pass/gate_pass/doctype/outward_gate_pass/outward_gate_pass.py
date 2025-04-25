@@ -1,10 +1,21 @@
 import frappe
 from frappe.model.document import Document
 from frappe.utils import nowdate
+
 class OutwardGatePass(Document):
     def before_save(self):
         self.send_outward_gate_to_stock_entry()
-        # self.set_invoice_number()
+        
+    # cancel courier gate pass when outward cancel  
+    def on_cancel(self):
+        if self.document_from == "Courier Gate Pass" and self.courier_gate_pass:
+            if frappe.db.exists('Courier Gate Pass', self.courier_gate_pass):
+                courier_doc = frappe.get_doc('Courier Gate Pass', self.courier_gate_pass)
+                if courier_doc.docstatus == 1:
+                    courier_doc.cancel()
+    
+    
+        
         
     # def before_validate(self):
     #     self.invoice()
