@@ -45,7 +45,16 @@
   "document_from",
   "column_break_r3adk",
   "courier_gate_pass",
-  "section_break_pxlca",
+  "section_break_ctla",
+  "document",
+  "column_break_bhnl",
+  "voucher",
+  "vehicle_details_section",
+  "vehicle_no",
+  "column_break_tzhh",
+  "driver_name",
+  "column_break_psxb",
+  "driver_contact",
   "additional_instruction_tab",
   "additional_instruction",
   "section_break_xf1h1",
@@ -243,10 +252,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "section_break_pxlca",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "additional_instruction_tab",
    "fieldtype": "Tab Break",
    "label": "Additional Instruction"
@@ -364,8 +369,58 @@
    "fieldtype": "Table",
    "label": "Inventory Gate Pass",
    "options": "Inventory Gate Pass"
+  },
+  {
+   "fieldname": "section_break_ctla",
+   "fieldtype": "Section Break",
+   "label": "Document Details"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Link",
+   "label": "Document",
+   "options": "DocType"
+  },
+  {
+   "fieldname": "voucher",
+   "fieldtype": "Dynamic Link",
+   "label": "Voucher",
+   "options": "document"
+  },
+  {
+   "fieldname": "column_break_bhnl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "column_break_tzhh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "column_break_psxb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_contact",
+   "fieldtype": "Data",
+   "label": "Driver Contact"
   }
  ],
+ "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [
@@ -380,8 +435,8 @@
    "link_fieldname": "supplier_name"
   }
  ],
- "modified": "2024-06-14 15:53:59.438677",
- "modified_by": "Administrator",
+ "modified": "2025-06-16 15:59:53.703019",
+ "modified_by": "shoaibmohtashim973@gmail.com",
  "module": "Gate Pass",
  "name": "Outward Gate Pass",
  "naming_rule": "By \"Naming Series\" field",
@@ -400,6 +455,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
