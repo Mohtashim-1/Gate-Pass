@@ -2,24 +2,6 @@
 // For license information, please see license.txt
 
 
-// frappe.ui.form.on("Courier Gate Pass", "customer", function(frm) {
-//     frm.set_query("link_address", function() {
-//         return {
-//             "filters": {
-//                 "customer": frm.doc.customer
-//             }
-//         };
-//     });
-// });
-// frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
-//     frm.set_query("contact_person", function () {
-//         return {
-//             "filters": {
-//                 "courier_contact": 1
-//             }
-//         };
-//     });
-// });
 frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
     frm.set_value("currency", "USD");
 });
@@ -33,35 +15,6 @@ frappe.ui.form.on("Courier Gate Pass", "onload", function (frm) {
     });
 });
 
-// frappe.ui.form.on("Courier Gate Pass", "supplier", function(frm) {
-//     frm.set_query("link_address", function() {
-//         return {
-//             "filters": {
-//                 "supplier": frm.doc.supplier
-//             }
-//         };
-//     });
-// });
-
-// frappe.ui.form.on("Courier Gate Pass", "customer", function(frm) {
-//     frm.set_query("contact_link", function() {
-//         return {
-//             "filters": {
-//                 "customer": frm.doc.customer
-//             }
-//         };
-//     });
-// });
-
-// frappe.ui.form.on("Courier Gate Pass", "supplier", function(frm) {
-//     frm.set_query("contact_link", function() {
-//         return {
-//             "filters": {
-//                 "supplier": frm.doc.supplier
-//             }
-//         };
-//     });
-// });
 
 frappe.ui.form.on("Courier Gate Pass CT", {
 
@@ -150,16 +103,13 @@ frappe.ui.form.on('Courier Gate Pass CT', {
 
 frappe.ui.form.on('Courier Gate Pass', {
     packet: function (frm) {
-        // clear existing rows
         frm.clear_table('dimensions');
 
-        // add new rows based on no_of_packages
         for (var i = 0; i < frm.doc.packet; i++) {
             var row = frappe.model.add_child(frm.doc, 'Dimensions', 'dimensions');
             row.packet = i + 1;
         }
 
-        // refresh the form to show the new rows
         frm.refresh_field('dimensions');
     }
 });
@@ -205,7 +155,7 @@ function set_weight(frm, cdt, cdn) {
 frappe.ui.form.on('Courier Gate Pass', {
     next_to_shipping: function (frm) {
         frm.page.set_primary_action(__('Next'), function () {
-            frm.set_value("shipping_details_tab", "Shipping Details"); // Replace tab_4 with the tab index you want to switch to
+            frm.set_value("shipping_details_tab", "Shipping Details"); 
         });
     }
 });
@@ -213,37 +163,21 @@ frappe.ui.form.on('Courier Gate Pass', {
 
 
 
-frappe.ui.form.on("Courier Gate Pass", "refresh", function (frm) {
+// frappe.ui.form.on("Courier Gate Pass", "refresh", function (frm) {
 
 
 
-    // frm.fields_dict['table_65'].grid.get_field('sales_order').get_query = function(doc, cdt, cdn) {
-    //     var child = locals[cdt][cdn];
-    //     //console.log(child);
-    //     return {    
-    //         filters:[
-    //             ['customer', '=', frm.doc.customer],
-    //             ['docstatus', '=', 1]
-    //         ]
-    //     }
-    // }
-
-
-
-
-
-});
+// });
 
 
 
 frappe.ui.form.on('Courier Gate Pass', {
     refresh
     : function (frm) {
-        // Modify the get_query_filters function
         frm.fields_dict['supplier'].get_query = function (doc) {
             return {
                 filters: {
-                    'disabled': 0 // Only fetch customers with 'disabled' set to 0 (not disabled)
+                    'disabled': 0 
                 }
             };
         };
@@ -253,11 +187,10 @@ frappe.ui.form.on('Courier Gate Pass', {
 
 frappe.ui.form.on('Courier Gate Pass', {
     refresh: function (frm) {
-        // Modify the get_query_filters function
         frm.fields_dict['customer'].get_query = function (doc) {
             return {
                 filters: {
-                    'disabled': 0 // Only fetch customers with 'disabled' set to 0 (not disabled)
+                    'disabled': 0 
                 }
             };
         };
@@ -269,9 +202,8 @@ frappe.ui.form.on('Courier Gate Pass', {
 
 frappe.ui.form.on("Courier Gate Pass", "refresh", function (frm) {
     frm.fields_dict['courier_bank_information'].grid.get_field('sales_order').get_query = function (doc, cdt, cdn) {
-        // console.log("frm")
+
         var child = locals[cdt][cdn];
-        // console.log(child);
         return {
             filters: [
                 ['customer', '=', doc.customer]
@@ -283,9 +215,7 @@ frappe.ui.form.on("Courier Gate Pass", "refresh", function (frm) {
 
 frappe.ui.form.on('Courier Gate Pass', {
     no_of_packages: function (frm) {
-        // frm.set_df_property('dimension', 'cannot_add_rows', true);
         let no_of_packages = frm.doc.no_of_packages;
-        // console.log(no_of_packages)
         let item_code = " ";
 
         if (!no_of_packages || no_of_packages <= 0) {
@@ -300,16 +230,13 @@ frappe.ui.form.on('Courier Gate Pass', {
             frappe.model.set_value(new_row.doctype, new_row.name, 'item_code', item_code);
         }
         frm.refresh_field("dimensions");
-        // this.frm.get_field("dimensions").grid.cannot_add_rows = true;
     }
 });
 
 
 frappe.ui.form.on('Courier Gate Pass', {
     refresh: function (frm) {
-        frm.set_df_property('dimensions', 'cannot_add_rows', true); // Hide add row button
-        // frm.set_df_property('dimensions', 'cannot_delete_rows', true); // Hide delete button
-        // frm.set_df_property('dimensions', 'cannot_delete_all_rows', true); // Hide delete all button
+        frm.set_df_property('dimensions', 'cannot_add_rows', true); 
     }
 });
 
@@ -323,7 +250,7 @@ frappe.ui.form.on("Courier Gate Pass", "customer", function(frm) {
     });
 });
 
-frappe.ui.form.on('Dimensions', { // Replace 'Dimension Item' with the actual DocType name of the child table
+frappe.ui.form.on('Dimensions', { 
     l: calculate_and_set_weight,
     w: calculate_and_set_weight,
     h: calculate_and_set_weight
@@ -352,9 +279,110 @@ frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
 
 frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
     frm.set_query("link_address", function() {
+        if (frm.doc.out_to === "Supplier" && frm.doc.supplier) {
+            return {
+                filters: {
+                    address_title: frm.doc.supplier
+                }
+            };
+        } else if (frm.doc.customer && frm.doc.out_to === "Customer") {
+            return {
+                filters: {
+                    address_title: frm.doc.customer
+                }
+            };
+        } else {
+            return {};
+        }
+    });
+});
+
+
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        frm.set_query('contact_link', () => {
+            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
+                return {
+                    filters: {
+                        custom_supplier: frm.doc.supplier
+                    }
+                };
+            } else {
+                return {};
+            }
+        });
+    }
+});
+
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        frm.set_query('contact_link', () => {
+            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
+                return {
+                    filters: {
+                        custom_supplier: frm.doc.supplier
+                    }
+                };
+            } else {
+                return {};
+            }
+        });
+    }
+});
+
+
+// weight calculation
+
+frappe.ui.form.on('Courier Gate Pass', {
+    refresh(frm) {
+        // Example: frappe.msgprint('1');
+    }
+});
+
+
+frappe.ui.form.on('Dimensions', { 
+    l: calculate_and_set_weight,
+    w: calculate_and_set_weight,
+    h: calculate_and_set_weight
+});
+
+function calculate_and_set_weight(frm, cdt, cdn) {
+    let d = locals[cdt][cdn];
+    let weight = (d.l * d.w * d.h) / 5000;
+    frappe.model.set_value(cdt, cdn, 'weight', weight);
+}
+
+
+// custom_courier_contact
+
+
+frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
+    frm.set_query("contact", function() {
         return {
-        "filters": 
-            {
+            filters: {
+                custom_courier_contact: 1
+            }
+        };
+    });
+});
+
+frappe.ui.form.on("Courier Gate Pass", "customer", function(frm) {
+    frm.set_query("contact_link", function() {
+        return {
+            "filters": {
+                "custom_customer": frm.doc.customer
+            }
+        };
+    });
+});
+
+
+frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
+    frm.set_query("link_address", function() {
+        return {
+            "filters": {
                 "address_title": frm.doc.customer
             }
         };
@@ -362,66 +390,31 @@ frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
 });
 
 
-frappe.ui.form.on('Courier Gate Pass', {
-    refresh(frm) {
-        frm.set_query('contact_link', () => {
-            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
-                return {
-                    filters: {
-                        custom_supplier: frm.doc.supplier
-                    }
-                };
-            } else {
-                return {};
-            }
-        });
-    }
+// 
+
+
+frappe.ui.form.on('Dimensions', { // Replace 'Dimension Item' with the actual DocType name of the child table
+    l: calculate_and_set_weight,
+    w: calculate_and_set_weight,
+    h: calculate_and_set_weight
 });
 
-// get supplier contact 
+function calculate_and_set_weight(frm, cdt, cdn) {
+    let d = locals[cdt][cdn];
+    let weight = (d.l * d.w * d.h) / 5000;
+    frappe.model.set_value(cdt, cdn, 'weight', weight);
+}
 
-frappe.ui.form.on('Courier Gate Pass', {
-    refresh(frm) {
-        frm.set_query('contact_link', () => {
-            if (frm.doc.out_to === 'Supplier' && frm.doc.supplier) {
-                return {
-                    filters: {
-                        custom_supplier: frm.doc.supplier
-                    }
-                };
-            } else {
-                return {};
+
+
+
+
+frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
+    frm.set_query("contact", function() {
+        return {
+            filters: {
+                custom_courier_contact: 1
             }
-        });
-    }
-});
-
-// get supplier address
-
-frappe.ui.form.on('Courier Gate Pass', {
-    refresh(frm) {
-        if (frm.doc.out_to === "Supplier" && frm.doc.supplier) {
-            frappe.call({
-                method: "frappe.client.get_list",
-                args: {
-                    doctype: "Address",
-                    fields: ["name"],
-                    filters: [
-                        ["Dynamic Link", "link_name", "=", frm.doc.supplier]
-                    ],
-                    limit_page_length: 1000
-                },
-                callback: function(r) {
-                    let address_list = (r.message || []).map(d => d.name);
-                    frm.set_query('link_address', () => {
-                        return {
-                            filters: {
-                                name: ["in", address_list]
-                            }
-                        };
-                    });
-                }
-            });
-        }
-    }
+        };
+    });
 });
