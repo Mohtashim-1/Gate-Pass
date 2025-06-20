@@ -393,6 +393,7 @@ frappe.ui.form.on("Courier Gate Pass", "onload", function(frm) {
 // 
 
 
+
 frappe.ui.form.on('Dimensions', { // Replace 'Dimension Item' with the actual DocType name of the child table
     l: calculate_and_set_weight,
     w: calculate_and_set_weight,
